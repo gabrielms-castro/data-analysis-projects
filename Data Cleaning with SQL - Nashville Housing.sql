@@ -1,4 +1,4 @@
-/*data cleaning project with nashville housing data */
+/*data cleaning project with Nashville housing data */
 
 SELECT *
 FROM portfolio_project.dbo.nashville_housing
@@ -43,7 +43,7 @@ WHERE a.PropertyAddress IS NULL
 
 --------------------------------------------
 ---Breaking out Address into individuals columns (address, city, state)
----Separando PropertyAddress em colunas individuais (endereço, cidade, estado)
+---Separando PropertyAddress em colunas individuais (endereÃ§o, cidade, estado)
 
 SELECT
 	SUBSTRING(PropertyAddress,1,CHARINDEX(',',PropertyAddress)-1) AS Address,
@@ -115,10 +115,10 @@ GROUP BY SoldAsVacant
 
 UPDATE portfolio_project.dbo.nashville_housing
 SET SoldAsVacant = CASE 
-						WHEN SoldAsVacant = 'Y' THEN 'Yes'
-						WHEN SoldAsVacant = 'N' THEN 'No'
-						ELSE SoldAsVacant
-					END
+			WHEN SoldAsVacant = 'Y' THEN 'Yes'
+			WHEN SoldAsVacant = 'N' THEN 'No'
+			ELSE SoldAsVacant
+		    END
 
 ----------------------------------------------------------------------------
 --removing duplicates:
